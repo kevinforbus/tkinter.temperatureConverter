@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-import converters
 from converters import TempConverters
 
 class App:
@@ -24,9 +23,8 @@ class App:
     def convert(self):
         # Convert to Fahrenheit
         celsius = self.c_var.get()
-        fahrenheit = self.converters.celsius_to_fahrenheit(celsius)
+        fahrenheit = self.celsius_to_fahrenheit(celsius)
         self.f_var.set(fahrenheit)
-        tk.Entry(self.frame(), textvariable=self.f_var).grid(row=1, column=1)
 
         # Convert to Celsius
         fahrenheit = self.f_var.get()
