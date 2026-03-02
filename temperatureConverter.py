@@ -1,6 +1,5 @@
 import tkinter as tk
-import converters
-# from converters import *
+from converters import TempConverters
 
 class App:
     def __init__(self, window):
@@ -28,14 +27,14 @@ class App:
         if self.c_var.get() != 0.0:
             # Convert to Fahrenheit
             celsius = self.c_var.get()
-            converter = converters.TempConverters('C', 'F', celsius)
+            converter = TempConverters('C', 'F', celsius)
             fahrenheit = converter.celsius_to_fahrenheit(celsius)
             self.f_var.set(fahrenheit)
         
         elif self.f_var.get() != 0.0:
             # Convert to Celsius
             fahrenheit = self.f_var.get()
-            converter = converters.TempConverters('F', 'C', fahrenheit)
+            converter = TempConverters('F', 'C', fahrenheit)
             celsius = converter.fahrenheit_to_celsius(fahrenheit)
             self.c_var.set(celsius)
 
