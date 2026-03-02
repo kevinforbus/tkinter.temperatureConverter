@@ -30,6 +30,7 @@ class TempConverters:
         Returns:
             str: Temperature in Fahrenheit as a string
         """
+        # Apply the formula: F = (C * 9/5) + 32
         return str((celsius * 9) / 5 + 32)
 
     def fahrenheit_to_celsius(self, fahrenheit):
@@ -41,12 +42,5 @@ class TempConverters:
         Returns:
             str: Temperature in Celsius as a string
         """
+        # Apply the formula: C = (F - 32) * 5/9
         return str((fahrenheit - 32) * 5/9)
-
-
-# Test cases for the TempConverters class...Remove once project is complete.
-# c1 = TempConverters('C', 'F', 0)
-# print(str(c1.celsius_to_fahrenheit(45)) + ' ' + c1.units_to)
-
-# c2 = TempConverters('F', 'C', 0)
-# print(str(c2.fahrenheit_to_celsius(68)) + ' ' + c2.units_to)
