@@ -37,14 +37,14 @@ class App:
             celsius = self.c_var.get()
             converter = TempConverters('C', 'F', celsius)
             fahrenheit = converter.celsius_to_fahrenheit(celsius)
-            self.f_var.set(fahrenheit)
+            self.f_var.set(float(fahrenheit))
         
         # Otherwise, check if Fahrenheit value is entered, convert to Celsius
         elif self.f_var.get() != 0.0:
             fahrenheit = self.f_var.get()
             converter = TempConverters('F', 'C', fahrenheit)
             celsius = converter.fahrenheit_to_celsius(fahrenheit)
-            self.c_var.set(celsius)
+            self.c_var.set(float(celsius))
 
     # Clear both temperature values
     def reset(self):
