@@ -74,4 +74,6 @@ The application uses the standard temperature conversion formulas:
 
 ## License
 
-Feel free to use and modify this application as needed.
+This project is licensed under the MIT License.
+
+See [LICENSE](LICENSE) for full details.
