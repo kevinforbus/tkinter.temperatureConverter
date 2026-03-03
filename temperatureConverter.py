@@ -10,8 +10,8 @@ class App:
         frame.pack()
 
         # Create variable objects to store temperature values
-        self.c_var = tk.DoubleVar()
-        self.f_var = tk.DoubleVar()
+        self.c_var = tk.StringVar()
+        self.f_var = tk.StringVar()
 
         # Add labels for Celsius and Fahrenheit
         tk.Label(frame, text='Deg C').grid(row=0, column=0)
@@ -32,24 +32,24 @@ class App:
     # Handle the convert button action
     def convert(self):
         # Check if Celsius value is entered, convert to Fahrenheit
-        if self.c_var.get() != 0.0:
+        if self.c_var.get() != "":
             # Convert to Fahrenheit
             celsius = self.c_var.get()
             converter = TempConverters('C', 'F', celsius)
-            fahrenheit = converter.celsius_to_fahrenheit(celsius)
-            self.f_var.set(float(fahrenheit))
+            fahrenheit = converter.celsius_to_fahrenheit(float(celsius))
+            self.f_var.set(fahrenheit)
         
         # Otherwise, check if Fahrenheit value is entered, convert to Celsius
-        elif self.f_var.get() != 0.0:
+        elif self.f_var.get() != "":
             fahrenheit = self.f_var.get()
             converter = TempConverters('F', 'C', fahrenheit)
-            celsius = converter.fahrenheit_to_celsius(fahrenheit)
-            self.c_var.set(float(celsius))
+            celsius = converter.fahrenheit_to_celsius(float(fahrenheit))
+            self.c_var.set(celsius)
 
     # Clear both temperature values
     def reset(self):
-        self.c_var.set(0.0)
-        self.f_var.set(0.0)
+        self.c_var.set("")
+        self.f_var.set("")
 
 # Create a basic window
 window = tk.Tk()
