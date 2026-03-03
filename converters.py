@@ -13,14 +13,6 @@ class TempConverters:
         self.units_to = units_to
         self.temperature = temperature
     
-    def description(self):
-        """Get a description of the conversion.
-        
-        Returns:
-            str: A string describing the conversion (e.g., 'Convert C to F')
-        """
-        return f'Convert {self.units_from} to {self.units_to}'
-
     def celsius_to_fahrenheit(self, celsius):
         """Convert Celsius temperature to Fahrenheit.
         
