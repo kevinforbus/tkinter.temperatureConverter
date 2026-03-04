@@ -60,7 +60,6 @@ The main application file containing the graphical user interface built with Tki
 Core module containing the `TempConverters` class, which handles all temperature conversion calculations. This module includes methods for:
 - Converting Celsius to Fahrenheit
 - Converting Fahrenheit to Celsius
-- Providing conversion descriptions
 
 ### README.md
 This documentation file
