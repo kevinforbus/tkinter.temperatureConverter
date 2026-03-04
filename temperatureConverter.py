@@ -18,16 +18,26 @@ class App:
         tk.Label(frame, text='Deg F').grid(row=1, column=0, pady=5)
         
         # Create input fields for temperature values
-        tk.Entry(frame, textvariable=self.c_var).grid(row=0, column=1, padx=5,)
-        tk.Entry(frame, textvariable=self.f_var).grid(row=1, column=1, padx=5)
+        c_entry = tk.Entry(frame, textvariable=self.c_var)
+        c_entry.grid(row=0, column=1, padx=5)
+        c_entry.bind('<Return>', lambda event: self.convert())
+        
+        f_entry = tk.Entry(frame, textvariable=self.f_var)
+        f_entry.grid(row=1, column=1, padx=5)
+        f_entry.bind('<Return>', lambda event: self.convert())
 
         # Create button frame for centered buttons
         button_frame = tk.Frame(frame)
         button_frame.grid(row=2, column=0, columnspan=2, pady=10)
         
         # Add Convert and Reset buttons
-        tk.Button(button_frame, text='Convert', command=self.convert).pack(side=tk.LEFT, padx=5)
-        tk.Button(button_frame, text='Reset', command=self.reset).pack(side=tk.LEFT, padx=5)
+        convert_button = tk.Button(button_frame, text='Convert', command=self.convert)
+        convert_button.bind('<Return>', lambda event: self.convert())
+        convert_button.pack(side=tk.LEFT, padx=5)
+        
+        reset_button = tk.Button(button_frame, text='Reset', command=self.reset)
+        reset_button.bind('<Return>', lambda event: self.reset())
+        reset_button.pack(side=tk.LEFT, padx=5)
 
     # Handle the convert button action
     def convert(self):
