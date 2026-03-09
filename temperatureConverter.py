@@ -64,7 +64,7 @@ class App:
 # Create a basic window
 window = tk.Tk()
 window.title('Temperature Converter')
-window.geometry('300x100')
+window.geometry('300x100+600+200')  # Set window size and position
 
 # Instantiate the App object
 app = App(window)
