@@ -1,16 +1,12 @@
 class TempConverters:
     """A class to convert between temperature units (Celsius and Fahrenheit)."""
 
-    def __init__(self, units_from, units_to, temperature):
+    def __init__(self, temperature):
         """Initialize the temperature converter.
         
         Args:
-            units_from (str): The source temperature unit (e.g., 'C' for Celsius)
-            units_to (str): The target temperature unit (e.g., 'F' for Fahrenheit)
             temperature (float): The initial temperature value
         """
-        self.units_from = units_from
-        self.units_to = units_to
         self.temperature = temperature
     
     def celsius_to_fahrenheit(self, celsius):

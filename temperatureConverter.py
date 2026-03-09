@@ -45,14 +45,14 @@ class App:
         if self.c_var.get() != "":
             # Convert to Fahrenheit
             celsius = self.c_var.get()
-            converter = TempConverters('C', 'F', celsius)
+            converter = TempConverters(celsius)
             fahrenheit = converter.celsius_to_fahrenheit(float(celsius))
             self.f_var.set(fahrenheit)
         
         # Otherwise, check if Fahrenheit value is entered, convert to Celsius
         elif self.f_var.get() != "":
             fahrenheit = self.f_var.get()
-            converter = TempConverters('F', 'C', fahrenheit)
+            converter = TempConverters(fahrenheit)
             celsius = converter.fahrenheit_to_celsius(float(fahrenheit))
             self.c_var.set(celsius)
 
